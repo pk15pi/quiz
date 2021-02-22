@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework.pagination import PageNumberPagination
+
 from .serializers import *
 from rest_framework import viewsets
 
@@ -17,3 +19,4 @@ class SubjectViewSet(viewsets.ModelViewSet):
 class questionAnswerViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = questionAnswerSerializer
+    Pagination_classes = PageNumberPagination
